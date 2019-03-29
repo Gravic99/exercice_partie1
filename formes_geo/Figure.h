@@ -19,11 +19,18 @@ public:
 	Figure(const Figure&);
 	int getX() const;
 	int getY() const;
-	void setPoint(int X, int Y);
-	void setX(int);
-	void setY(int);
-	bool EstSelectionne();	
-	void Deselectionner();
+
+	virtual int getCote() const;
+	virtual int getRayon() const;
+	virtual float calculerPerimetre() const;
+	virtual float calculerAire() const;
+	virtual void setPoint(int X, int Y);
+	virtual void setX(int);
+	virtual void setY(int);
+	virtual void setRayon(int);
+	virtual void setCote(int);
+	virtual bool EstSelectionne();
+	virtual void Deselectionner();
 };
 
 #endif

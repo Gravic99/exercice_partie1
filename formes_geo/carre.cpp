@@ -24,3 +24,11 @@ int Carre::getCote() const
 {
 	return cote;
 }
+float Carre::calculerPerimetre() const
+{
+	return (4 * cote);
+}
+float Carre::calculerAire() const
+{
+	return(cote*cote);
+}

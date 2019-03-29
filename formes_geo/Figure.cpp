@@ -30,10 +30,26 @@ int Figure::getY() const
 {
 	return y;
 }
+int Figure::getCote() const
+{
+	return 0;
+}
 
+int Figure::getRayon() const
+{
+	return 0;
+}
 bool Figure::EstSelectionne()
 {
 	return estSelectionne;
+}
+float Figure::calculerPerimetre()const
+{
+	return 0;
+}
+float Figure::calculerAire() const
+{
+	return 0;
 }
 
 void Figure::setPoint(int inX, int inY) 
@@ -51,7 +67,14 @@ void Figure::setY(int inY)
 {
 	y=inY;
 }
+void Figure::setRayon(int inRayon)
+{
 
+}
+void Figure::setCote(int inCote)
+{
+
+}
 void Figure::Deselectionner()
 {
 	estSelectionne = false;

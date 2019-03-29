@@ -247,9 +247,26 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 				if (comboFigure->SelectedIndex != 0)
 				{					
 
+					if (comboFigure->SelectedIndex == 1)
+					{
+						figureCourante = new Carre;
+					}
+					else if (comboFigure->SelectedIndex ==2)
+					{
+						figureCourante = new Cercle;
+					}
 					if ( figureCourante != NULL)
 					{
 
+						figureCourante->setX(Convert::ToInt32(textX->Text));
+						figureCourante->setY(Convert::ToInt32(textY -> Text));
+						figureCourante->setPoint(Convert::ToInt32(textX->Text), Convert::ToInt32(textY->Text));
+
+						figureCourante->setCote(Convert::ToInt32(textCote->Text));
+
+						figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
+
+						lesFigures.AjouterFigure(figureCourante);
 
 						DessinerFigure();
 					}
@@ -274,8 +291,14 @@ private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs
 			int rayon = 0;
 			int cote = 0;
 
+				x = figureCourante->getX();
+				y = figureCourante->getY();
+				rayon = figureCourante->getRayon();
+				cote = figureCourante->getCote();
+
 			if (comboFigure->SelectedIndex == 1)
 			 {
+				
 				 objetGraphique->DrawRectangle(crayon, x, y, cote, cote);
 			 }
 			 else
@@ -293,9 +316,12 @@ private: System::Void btnPerimetre_Click(System::Object^  sender, System::EventA
 			 figureCourante = lesFigures.ObtenirFigure(cptFigure);
 			 while (figureCourante != nullptr)
 			 {
-				 
+				 listBoxFigures->Items->Add(figureCourante->calculerPerimetre());
+
 				 cptFigure++;
 				 figureCourante = lesFigures.ObtenirFigure(cptFigure);
+
+
 			 }
 		 }
 
