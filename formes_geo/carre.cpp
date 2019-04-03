@@ -14,7 +14,9 @@ Carre::Carre(const Carre& inCarre):Figure(inCarre)
 {
 	cote=inCarre.cote;
 }
+Carre::~Carre() {
 
+}
 void Carre::setCote(int inCote)
 {
   cote = inCote;
@@ -31,4 +33,15 @@ float Carre::calculerPerimetre() const
 float Carre::calculerAire() const
 {
 	return(cote*cote);
+
+}
+void Carre::Selectionner(int inX, int inY)
+{
+	int x2 = x + cote;
+	int y2 = y + cote;
+	if (inX >= x && inX <= x2 && inY >= y && inY <= y2)
+	{
+		estSelectionne = true;
+	}
+		
 }

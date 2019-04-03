@@ -14,6 +14,10 @@ Cercle::Cercle(const Cercle& inCercle):Figure(inCercle)
 {
 	rayon = inCercle.rayon;
 }
+Cercle::~Cercle()
+{
+
+}
 
 void Cercle::setRayon(int inRayon)
 {
@@ -31,4 +35,20 @@ float Cercle::calculerPerimetre()const
 float Cercle::calculerAire() const
 {
 	return (Pi *rayon*rayon);
+}
+void Cercle::Selectionner(int inX, int inY)
+{
+	float RayonFloat = (float)rayon;
+	float XFloat = (float)inX;
+	float Yfloat = (float)inY;
+	float centreX  = (float)(x + rayon);
+	float centreY = (float)(y + rayon);
+
+	if (((pow((XFloat - centreX), 2) + pow((Yfloat - centreY), 2)) / pow(RayonFloat, 2)) <= 1)
+	{
+		
+			estSelectionne = true;
+		
+	}
+
 }
